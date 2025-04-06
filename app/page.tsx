@@ -266,7 +266,7 @@ export default function LandingPage() {
                   variant="outline"
                   className="rounded-full h-12 px-8 text-base"
                 >
-                  Book a Demo
+                  Read Documentation
                 </Button>
               </div>
               {/* <div className="flex items-center justify-center gap-4 mt-6 text-sm text-muted-foreground">
@@ -922,11 +922,12 @@ export default function LandingPage() {
               className="flex flex-col items-center justify-center space-y-6 text-center"
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
-                Ready to Transform Your Workflow?
+              Ready to Simplify Your Campus Accounts?
               </h2>
               <p className="mx-auto max-w-[700px] text-primary-foreground/80 md:text-xl">
-                Join thousands of satisfied customers who have streamlined their
-                processes and boosted productivity with our platform.
+              Join institutions that are already managing fees, inventory, and reports smarter with Campus Ledger.
+
+
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mt-4">
                 <Button
@@ -934,7 +935,7 @@ export default function LandingPage() {
                   variant="secondary"
                   className="rounded-full h-12 px-8 text-base"
                 >
-                  Start Free Trial
+                  Pre Order Now
                   <ArrowRight className="ml-2 size-4" />
                 </Button>
                 <Button
@@ -942,11 +943,11 @@ export default function LandingPage() {
                   variant="outline"
                   className="rounded-full h-12 px-8 text-base bg-transparent border-white text-white hover:bg-white/10"
                 >
-                  Schedule a Demo
+                  Read Documentation
                 </Button>
               </div>
               <p className="text-sm text-primary-foreground/80 mt-4">
-                No credit card required. 14-day free trial. Cancel anytime.
+                Make the switch to Campus Ledger today and experience the difference.
               </p>
             </motion.div>
           </div>
@@ -958,13 +959,14 @@ export default function LandingPage() {
             <div className="space-y-4">
               <div className="flex items-center gap-2 font-bold">
                 <div className="size-8 rounded-lg bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-primary-foreground">
-                  S
+                  CL
                 </div>
-                <span>SaaSify</span>
+                <span>Campus Ledger</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                Streamline your workflow with our all-in-one SaaS platform.
-                Boost productivity and scale your business.
+              Making Campus Finance Simple, Transparent, and Secure.
+
+
               </p>
               <div className="flex gap-4">
                 <Link
@@ -1145,7 +1147,7 @@ export default function LandingPage() {
           </div>
           <div className="flex flex-col gap-4 sm:flex-row justify-between items-center border-t border-border/40 pt-8">
             <p className="text-xs text-muted-foreground">
-              &copy; {new Date().getFullYear()} SaaSify. All rights reserved.
+              &copy; {new Date().getFullYear()} CampusLedger. All rights reserved.
             </p>
             <div className="flex gap-4">
               <Link
