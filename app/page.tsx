@@ -762,7 +762,7 @@ export default function LandingPage() {
                   {
                     question: "What kind of support do you offer?",
                     answer:
-                      "We offer support through email and WhatsApp. All plans include email support, while the Professional Plan offers priority response. Contact us at campusledger@outlook.in or WhatsApp us at +91 6238964074.",
+                      "We offer support through email and WhatsApp. All plans include email support, while the Professional Plan offers priority response. Contact us at info@campusledger@live or WhatsApp us at +91 6238964074.",
                   },
                   {
                     question: "What payment methods do you accept?",
@@ -941,7 +941,7 @@ export default function LandingPage() {
           <Mail className="size-6" />
         </div>
         <h3 className="text-lg font-bold mb-2">Email</h3>
-        <p className="text-muted-foreground">campusledger@outlook.in</p>
+        <p className="text-muted-foreground">info@campusledger@live</p>
       </motion.div>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
