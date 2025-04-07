@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import { Loader2 } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 
-export default function PreOrderPage() {
+export default function prebookPage() {
   const router = useRouter()
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export default function PreOrderPage() {
         <div className="animate-pulse text-blue-600">
           <Loader2 className="w-12 h-12 mx-auto animate-spin" />
         </div>
-        <h1 className="text-2xl font-bold">Redirecting to Pre-Order Form</h1>
+        <h1 className="text-2xl font-bold">Redirecting to Pre-Book Form</h1>
         <p className="text-gray-600">Please wait while we redirect you to the pre-booking form. This may take a few seconds.</p>
         <p className="text-sm text-gray-400">If you are not redirected, <a href="https://forms.gle/pJS9Z3i5TUwgSdVx8" className="text-blue-600 underline">click here</a>.</p>
       </div>

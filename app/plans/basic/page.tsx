@@ -77,7 +77,7 @@ export default function BasicPlanPage() {
         </div>
         <div className="mt-16 text-center">
           <Link
-            href="/preorder"
+            href="/prebook"
             className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-medium hover:bg-blue-700 transition"
           >
             Pre-Book Basic Plan

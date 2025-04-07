@@ -69,7 +69,7 @@ export default function ProfessionalPlanPage() {
         </div>
         <div className="mt-16 text-center">
           <Link
-            href="/preorder"
+            href="/prebook"
             className="inline-block bg-yellow-500 text-white px-8 py-3 rounded-lg text-lg font-medium hover:bg-yellow-600 transition"
           >
             Pre-Book Professional Plan

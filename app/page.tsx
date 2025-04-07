@@ -18,6 +18,9 @@ import {
   Users,
   BarChart,
   Layers,
+  Mail,
+  Phone,
+  MessageSquare,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -30,6 +33,11 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useTheme } from "next-themes";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { toast } from 'react-hot-toast'
+
 
 export default function LandingPage() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -111,6 +119,7 @@ export default function LandingPage() {
 
   return (
     <div className="flex min-h-[100dvh] flex-col">
+      {/* Header */}
       <header
         className={`sticky top-0 z-50 w-full backdrop-blur-lg transition-all duration-300 ${
           isScrolled ? "bg-background/80 shadow-sm" : "bg-transparent"
@@ -144,6 +153,12 @@ export default function LandingPage() {
             >
               FAQ
             </Link>
+            <Link
+              href="#contact"
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Contact
+            </Link>
           </nav>
           <div className="hidden md:flex gap-4 items-center">
             <Button
@@ -160,11 +175,11 @@ export default function LandingPage() {
               <span className="sr-only">Toggle theme</span>
             </Button>
 
-            <Link href={"/preorder"}>
-            <Button className="rounded-full">
-              Pre-Book Now
-              <ChevronRight className="ml-1 size-4" />
-            </Button>
+            <Link href={"/prebook"}>
+              <Button className="rounded-full">
+                Pre-Book Now
+                <ChevronRight className="ml-1 size-4" />
+              </Button>
             </Link>
           </div>
           <div className="flex items-center gap-4 md:hidden">
@@ -225,17 +240,19 @@ export default function LandingPage() {
                 FAQ
               </Link>
               <div className="flex flex-col gap-2 pt-2 border-t">
-              <Link href={"/preorder"}>
-                <Button className="rounded-full">
-                  Pre-Book Now
-                  <ChevronRight className="ml-1 size-4" />
-                </Button>
+                <Link href={"/prebook"}>
+                  <Button className="rounded-full">
+                    Pre-Book Now
+                    <ChevronRight className="ml-1 size-4" />
+                  </Button>
                 </Link>
               </div>
             </div>
           </motion.div>
         )}
       </header>
+
+      {/* Main content */}
       <main className="flex-1">
         {/* Hero Section */}
         <section className="w-full py-20 md:py-32 lg:py-40 overflow-hidden">
@@ -263,11 +280,14 @@ export default function LandingPage() {
                 Automate, monitor, and manage — all in one place.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href={"/preorder"}>
-                <Button size="lg" className="rounded-full h-12 px-8 text-base">
-                  Pre-Book Now
-                  <ArrowRight className="ml-2 size-4" />
-                </Button>
+                <Link href={"/prebook"}>
+                  <Button
+                    size="lg"
+                    className="rounded-full h-12 px-8 text-base"
+                  >
+                    Pre-Book Now
+                    <ArrowRight className="ml-2 size-4" />
+                  </Button>
                 </Link>
                 <Link
                   href="/documentation"
@@ -282,20 +302,6 @@ export default function LandingPage() {
                   </Button>
                 </Link>
               </div>
-              {/* <div className="flex items-center justify-center gap-4 mt-6 text-sm text-muted-foreground">
-                <div className="flex items-center gap-1">
-                  <Check className="size-4 text-primary" />
-                  <span>No credit card</span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <Check className="size-4 text-primary" />
-                  <span>14-day trial</span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <Check className="size-4 text-primary" />
-                  <span>Cancel anytime</span>
-                </div>
-              </div> */}
             </motion.div>
 
             <motion.div
@@ -320,27 +326,6 @@ export default function LandingPage() {
             </motion.div>
           </div>
         </section>
-
-        {/* Logos Section */}
-        {/* <section className="w-full py-12 border-y bg-muted/30">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <p className="text-sm font-medium text-muted-foreground">Trusted by innovative companies worldwide</p>
-              <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Image
-                    key={i}
-                    src={`/placeholder-logo.svg`}
-                    alt={`Company logo ${i}`}
-                    width={120}
-                    height={60}
-                    className="h-8 w-auto opacity-70 grayscale transition-all hover:opacity-100 hover:grayscale-0"
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </section> */}
 
         {/* Features Section */}
         <section id="features" className="w-full py-20 md:py-32">
@@ -463,104 +448,6 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
-
-        {/* Testimonials Section */}
-        {/* <section id="testimonials" className="w-full py-20 md:py-32">
-          <div className="container px-4 md:px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="flex flex-col items-center justify-center space-y-4 text-center mb-12"
-            >
-              <Badge className="rounded-full px-4 py-1.5 text-sm font-medium" variant="secondary">
-                Testimonials
-              </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Loved by Teams Worldwide</h2>
-              <p className="max-w-[800px] text-muted-foreground md:text-lg">
-                Don't just take our word for it. See what our customers have to say about their experience.
-              </p>
-            </motion.div>
-
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {[
-                {
-                  quote:
-                    "SaaSify has transformed how we manage our projects. The automation features have saved us countless hours of manual work.",
-                  author: "Sarah Johnson",
-                  role: "Project Manager, TechCorp",
-                  rating: 5,
-                },
-                {
-                  quote:
-                    "The analytics dashboard provides insights we never had access to before. It's helped us make data-driven decisions that have improved our ROI.",
-                  author: "Michael Chen",
-                  role: "Marketing Director, GrowthLabs",
-                  rating: 5,
-                },
-                {
-                  quote:
-                    "Customer support is exceptional. Any time we've had an issue, the team has been quick to respond and resolve it. Couldn't ask for better service.",
-                  author: "Emily Rodriguez",
-                  role: "Operations Lead, StartupX",
-                  rating: 5,
-                },
-                {
-                  quote:
-                    "We've tried several similar solutions, but none compare to the ease of use and comprehensive features of SaaSify. It's been a game-changer.",
-                  author: "David Kim",
-                  role: "CEO, InnovateNow",
-                  rating: 5,
-                },
-                {
-                  quote:
-                    "The collaboration tools have made remote work so much easier for our team. We're more productive than ever despite being spread across different time zones.",
-                  author: "Lisa Patel",
-                  role: "HR Director, RemoteFirst",
-                  rating: 5,
-                },
-                {
-                  quote:
-                    "Implementation was seamless, and the ROI was almost immediate. We've reduced our operational costs by 30% since switching to SaaSify.",
-                  author: "James Wilson",
-                  role: "COO, ScaleUp Inc",
-                  rating: 5,
-                },
-              ].map((testimonial, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.05 }}
-                >
-                  <Card className="h-full overflow-hidden border-border/40 bg-gradient-to-b from-background to-muted/10 backdrop-blur transition-all hover:shadow-md">
-                    <CardContent className="p-6 flex flex-col h-full">
-                      <div className="flex mb-4">
-                        {Array(testimonial.rating)
-                          .fill(0)
-                          .map((_, j) => (
-                            <Star key={j} className="size-4 text-yellow-500 fill-yellow-500" />
-                          ))}
-                      </div>
-                      <p className="text-lg mb-6 flex-grow">{testimonial.quote}</p>
-                      <div className="flex items-center gap-4 mt-auto pt-4 border-t border-border/40">
-                        <div className="size-10 rounded-full bg-muted flex items-center justify-center text-foreground font-medium">
-                          {testimonial.author.charAt(0)}
-                        </div>
-                        <div>
-                          <p className="font-medium">{testimonial.author}</p>
-                          <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section> */}
 
         {/* Pricing Section */}
         <section
@@ -690,17 +577,17 @@ export default function LandingPage() {
                                 </li>
                               ))}
                             </ul>
-                            <Link href={"/preorder"}>
-                            <Button
-                              className={`w-full mt-auto rounded-full ${
-                                plan.popular
-                                  ? "bg-primary hover:bg-primary/90"
-                                  : "bg-muted hover:bg-muted/80"
-                              }`}
-                              variant={plan.popular ? "default" : "outline"}
-                            >
-                              {plan.cta}
-                            </Button>
+                            <Link href={"/prebook"}>
+                              <Button
+                                className={`w-full mt-auto rounded-full ${
+                                  plan.popular
+                                    ? "bg-primary hover:bg-primary/90"
+                                    : "bg-muted hover:bg-muted/80"
+                                }`}
+                                variant={plan.popular ? "default" : "outline"}
+                              >
+                                {plan.cta}
+                              </Button>
                             </Link>
                           </CardContent>
                         </Card>
@@ -794,17 +681,17 @@ export default function LandingPage() {
                                 </li>
                               ))}
                             </ul>
-                            <Link href={"/preorder"}>
-                            <Button
-                              className={`w-full mt-auto rounded-full ${
-                                plan.popular
-                                  ? "bg-primary hover:bg-primary/90"
-                                  : "bg-muted hover:bg-muted/80"
-                              }`}
-                              variant={plan.popular ? "default" : "outline"}
-                            >
-                              {plan.cta}
-                            </Button>
+                            <Link href={"/prebook"}>
+                              <Button
+                                className={`w-full mt-auto rounded-full ${
+                                  plan.popular
+                                    ? "bg-primary hover:bg-primary/90"
+                                    : "bg-muted hover:bg-muted/80"
+                                }`}
+                                variant={plan.popular ? "default" : "outline"}
+                              >
+                                {plan.cta}
+                              </Button>
                             </Link>
                           </CardContent>
                         </Card>
@@ -925,6 +812,167 @@ export default function LandingPage() {
           </div>
         </section>
 
+        {/* Contact Us Section */}
+        <section
+  id="contact"
+  className="w-full py-20 md:py-32 bg-muted/30 relative overflow-hidden"
+>
+  <div className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-black bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_40%,transparent_100%)]"></div>
+
+  <div className="container px-4 md:px-6 relative">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="flex flex-col items-center justify-center space-y-4 text-center mb-12"
+    >
+      <Badge
+        className="rounded-full px-4 py-1.5 text-sm font-medium"
+        variant="secondary"
+      >
+        Contact Us
+      </Badge>
+      <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+        Get in Touch
+      </h2>
+      <p className="max-w-[800px] text-muted-foreground md:text-lg">
+        Have questions? We're here to help. Send us a message and we'll get back to you as soon as possible.
+      </p>
+    </motion.div>
+
+    <div className="mx-auto max-w-3xl">
+      <Card className="border-border/40 shadow-md bg-gradient-to-b from-background to-muted/10 backdrop-blur">
+        <CardContent className="p-6 md:p-8">
+          <form
+            id="contactForm"
+            onSubmit={(e) => {
+              e.preventDefault();
+              const formData = new FormData(
+                e.target as HTMLFormElement
+              );
+              const formObject = Object.fromEntries(formData);
+
+              // Replace with your Google Apps Script Web App URL
+              const scriptURL = "https://script.google.com/macros/s/AKfycbzmYqB6p3MS2_qmDKzuh07l3Yg5cBnIFYFf82y4awSOe8XiwvQJpdlY32kaQb_6chmC/exec";
+
+              fetch(scriptURL, {
+                method: "POST",
+                body: JSON.stringify(formObject),
+                headers: {
+                  "Content-Type": "application/json",
+                },
+              })
+                .then((response) => {
+                  const formElement =
+                    document.getElementById("contactForm");
+                  if (formElement) {
+                    (formElement as HTMLFormElement).reset();
+                  }
+                  // Show success toast notification
+                  toast.success("Thank you! Your message has been sent successfully.");
+                })
+                .catch((error) => {
+                  console.error("Error!", error.message);
+                  // Show error toast notification
+                  toast.error("Something went wrong. Please try again later.");
+                });
+            }}
+            className="space-y-6"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <Label htmlFor="name">Name</Label>
+                <Input
+                  id="name"
+                  name="name"
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="email">Email</Label>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="Your email"
+                  required
+                />
+              </div>
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="subject">Subject</Label>
+              <Input
+                id="subject"
+                name="subject"
+                placeholder="How can we help?"
+                required
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="message">Message</Label>
+              <Textarea
+                id="message"
+                name="message"
+                placeholder="Tell us more about your inquiry..."
+                className="min-h-32"
+                required
+              />
+            </div>
+            <Button type="submit" className="w-full rounded-full">
+              Send Message
+              <ArrowRight className="ml-2 size-4" />
+            </Button>
+          </form>
+        </CardContent>
+      </Card>
+    </div>
+
+    <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        className="flex flex-col items-center"
+      >
+        <div className="size-12 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary mb-4">
+          <Mail className="size-6" />
+        </div>
+        <h3 className="text-lg font-bold mb-2">Email</h3>
+        <p className="text-muted-foreground">campusledger@outlook.in</p>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="flex flex-col items-center"
+      >
+        <div className="size-12 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary mb-4">
+          <Phone className="size-6" />
+        </div>
+        <h3 className="text-lg font-bold mb-2">Phone</h3>
+        <p className="text-muted-foreground">+91 6238964074</p>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        className="flex flex-col items-center"
+      >
+        <div className="size-12 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary mb-4">
+          <MessageSquare className="size-6" />
+        </div>
+        <h3 className="text-lg font-bold mb-2">WhatsApp</h3>
+        <p className="text-muted-foreground">+91 6238964074</p>
+      </motion.div>
+    </div>
+  </div>
+</section>
+
         {/* CTA Section */}
         <section className="w-full py-20 md:py-32 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground relative overflow-hidden">
           <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
@@ -947,7 +995,7 @@ export default function LandingPage() {
                 reports smarter with Campus Ledger.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mt-4">
-                <Link href={"/preorder"}>
+                <Link href={"/prebook"}>
                   <Button
                     size="lg"
                     variant="secondary"
@@ -976,6 +1024,8 @@ export default function LandingPage() {
           </div>
         </section>
       </main>
+
+      {/* Footer */}
       <footer className="w-full border-t bg-background/95 backdrop-blur-sm">
         <div className="container flex flex-col gap-8 px-4 py-10 md:px-6 lg:py-16">
           <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">

@@ -51,7 +51,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <head>
       <link rel="icon" href="/favicon.ico" />
         <script
@@ -81,10 +81,12 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
   );
 }
 
-import "./globals.css";
+import "./globals.css";import { Toaster } from "react-hot-toast";
+
