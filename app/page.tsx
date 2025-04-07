@@ -130,7 +130,6 @@ export default function LandingPage() {
               src="/logo-website.png"
               alt="Campus Ledger Logo"
               width={150}
-              height={150}
             />
           </div>
           <nav className="hidden md:flex gap-8">
@@ -176,7 +175,7 @@ export default function LandingPage() {
 
             <Link href={"/prebook"}>
               <Button className="rounded-full">
-                Pre-Book Now
+                Pre Book Now
                 <ChevronRight className="ml-1 size-4" />
               </Button>
             </Link>
@@ -237,6 +236,13 @@ export default function LandingPage() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 FAQ
+              </Link>
+              <Link
+                href="#contact"
+                className="py-2 text-sm font-medium"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Contact
               </Link>
               <div className="flex flex-col gap-2 pt-2 border-t">
                 <Link href={"/prebook"}>
