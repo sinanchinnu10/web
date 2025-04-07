@@ -36,8 +36,7 @@ import { useTheme } from "next-themes";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { toast } from 'react-hot-toast'
-
+import { toast } from "react-hot-toast";
 
 export default function LandingPage() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -814,164 +813,165 @@ export default function LandingPage() {
 
         {/* Contact Us Section */}
         <section
-  id="contact"
-  className="w-full py-20 md:py-32 bg-muted/30 relative overflow-hidden"
->
-  <div className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-black bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_40%,transparent_100%)]"></div>
+          id="contact"
+          className="w-full py-20 md:py-32 bg-muted/30 relative overflow-hidden"
+        >
+          <div className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-black bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_40%,transparent_100%)]"></div>
 
-  <div className="container px-4 md:px-6 relative">
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      className="flex flex-col items-center justify-center space-y-4 text-center mb-12"
-    >
-      <Badge
-        className="rounded-full px-4 py-1.5 text-sm font-medium"
-        variant="secondary"
-      >
-        Contact Us
-      </Badge>
-      <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-        Get in Touch
-      </h2>
-      <p className="max-w-[800px] text-muted-foreground md:text-lg">
-        Have questions? We're here to help. Send us a message and we'll get back to you as soon as possible.
-      </p>
-    </motion.div>
+          <div className="container px-4 md:px-6 relative">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="flex flex-col items-center justify-center space-y-4 text-center mb-12"
+            >
+              <Badge
+                className="rounded-full px-4 py-1.5 text-sm font-medium"
+                variant="secondary"
+              >
+                Contact Us
+              </Badge>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+                Get in Touch
+              </h2>
+              <p className="max-w-[800px] text-muted-foreground md:text-lg">
+                Have questions? We're here to help. Send us a message and we'll
+                get back to you as soon as possible.
+              </p>
+            </motion.div>
 
-    <div className="mx-auto max-w-3xl">
-      <Card className="border-border/40 shadow-md bg-gradient-to-b from-background to-muted/10 backdrop-blur">
-        <CardContent className="p-6 md:p-8">
-          <form
-            id="contactForm"
-            onSubmit={(e) => {
-              e.preventDefault();
-              const formData = new FormData(
-                e.target as HTMLFormElement
-              );
-              const formObject = Object.fromEntries(formData);
+            <div className="mx-auto max-w-3xl">
+              <Card className="border-border/40 shadow-md bg-gradient-to-b from-background to-muted/10 backdrop-blur">
+                <CardContent className="p-6 md:p-8">
+                  <form
+                    id="contactForm"
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      const formData = new FormData(
+                        e.target as HTMLFormElement
+                      );
+                      const formObject = Object.fromEntries(formData);
 
-              // Replace with your Google Apps Script Web App URL
-              const scriptURL = "https://script.google.com/macros/s/AKfycbzmYqB6p3MS2_qmDKzuh07l3Yg5cBnIFYFf82y4awSOe8XiwvQJpdlY32kaQb_6chmC/exec";
+                      // Replace with your Google Apps Script Web App URL
+                      // const scriptURL = "";
 
-              fetch(scriptURL, {
-                method: "POST",
-                body: JSON.stringify(formObject),
-                headers: {
-                  "Content-Type": "application/json",
-                },
-              })
-                .then((response) => {
-                  const formElement =
-                    document.getElementById("contactForm");
-                  if (formElement) {
-                    (formElement as HTMLFormElement).reset();
-                  }
-                  // Show success toast notification
-                  toast.success("Thank you! Your message has been sent successfully.");
-                })
-                .catch((error) => {
-                  console.error("Error!", error.message);
-                  // Show error toast notification
-                  toast.error("Something went wrong. Please try again later.");
-                });
-            }}
-            className="space-y-6"
-          >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <Label htmlFor="name">Name</Label>
-                <Input
-                  id="name"
-                  name="name"
-                  placeholder="Your name"
-                  required
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="Your email"
-                  required
-                />
-              </div>
+                      // fetch(scriptURL, {
+                      //   method: "POST",
+                      //   body: JSON.stringify(formObject),
+                      //   headers: {
+                      //     "Content-Type": "application/json",
+                      //   },
+                      // })
+                      //   .then((response) => {
+                      //     const formElement =
+                      //       document.getElementById("contactForm");
+                      //     if (formElement) {
+                      //       (formElement as HTMLFormElement).reset();
+                      //     }
+                      //     // Show success toast notification
+                      //     toast.success("Thank you! Your message has been sent successfully.");
+                      //   })
+                      //   .catch((error) => {
+                      //     console.error("Error!", error.message);
+                      //     // Show error toast notification
+                      //     toast.error("Something went wrong. Please try again later.");
+                      //   });
+                    }}
+                    className="space-y-6"
+                  >
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <Label htmlFor="name">Name</Label>
+                        <Input
+                          id="name"
+                          name="name"
+                          placeholder="Your name"
+                          required
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="email">Email</Label>
+                        <Input
+                          id="email"
+                          name="email"
+                          type="email"
+                          placeholder="Your email"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="subject">Subject</Label>
+                      <Input
+                        id="subject"
+                        name="subject"
+                        placeholder="How can we help?"
+                        required
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="message">Message</Label>
+                      <Textarea
+                        id="message"
+                        name="message"
+                        placeholder="Tell us more about your inquiry..."
+                        className="min-h-32"
+                        required
+                      />
+                    </div>
+                    <Button type="submit" className="w-full rounded-full">
+                      Send Message
+                      <ArrowRight className="ml-2 size-4" />
+                    </Button>
+                  </form>
+                </CardContent>
+              </Card>
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="subject">Subject</Label>
-              <Input
-                id="subject"
-                name="subject"
-                placeholder="How can we help?"
-                required
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="message">Message</Label>
-              <Textarea
-                id="message"
-                name="message"
-                placeholder="Tell us more about your inquiry..."
-                className="min-h-32"
-                required
-              />
-            </div>
-            <Button type="submit" className="w-full rounded-full">
-              Send Message
-              <ArrowRight className="ml-2 size-4" />
-            </Button>
-          </form>
-        </CardContent>
-      </Card>
-    </div>
 
-    <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-        className="flex flex-col items-center"
-      >
-        <div className="size-12 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary mb-4">
-          <Mail className="size-6" />
-        </div>
-        <h3 className="text-lg font-bold mb-2">Email</h3>
-        <p className="text-muted-foreground">info@campusledger@live</p>
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="flex flex-col items-center"
-      >
-        <div className="size-12 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary mb-4">
-          <Phone className="size-6" />
-        </div>
-        <h3 className="text-lg font-bold mb-2">Phone</h3>
-        <p className="text-muted-foreground">+91 6238964074</p>
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-        className="flex flex-col items-center"
-      >
-        <div className="size-12 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary mb-4">
-          <MessageSquare className="size-6" />
-        </div>
-        <h3 className="text-lg font-bold mb-2">WhatsApp</h3>
-        <p className="text-muted-foreground">+91 6238964074</p>
-      </motion.div>
-    </div>
-  </div>
-</section>
+            <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="flex flex-col items-center"
+              >
+                <div className="size-12 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary mb-4">
+                  <Mail className="size-6" />
+                </div>
+                <h3 className="text-lg font-bold mb-2">Email</h3>
+                <p className="text-muted-foreground">info@campusledger@live</p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="flex flex-col items-center"
+              >
+                <div className="size-12 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary mb-4">
+                  <Phone className="size-6" />
+                </div>
+                <h3 className="text-lg font-bold mb-2">Phone</h3>
+                <p className="text-muted-foreground">+91 6238964074</p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="flex flex-col items-center"
+              >
+                <div className="size-12 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary mb-4">
+                  <MessageSquare className="size-6" />
+                </div>
+                <h3 className="text-lg font-bold mb-2">WhatsApp</h3>
+                <p className="text-muted-foreground">+91 6238964074</p>
+              </motion.div>
+            </div>
+          </div>
+        </section>
 
         {/* CTA Section */}
         <section className="w-full py-20 md:py-32 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground relative overflow-hidden">
