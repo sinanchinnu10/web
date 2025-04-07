@@ -118,12 +118,12 @@ export default function LandingPage() {
       >
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2 font-bold">
-            <Image  
+            <Image
               src="/logo-website.png"
               alt="Campus Ledger Logo"
               width={150}
               height={150}
-             />
+            />
           </div>
           <nav className="hidden md:flex gap-8">
             <Link
@@ -160,10 +160,12 @@ export default function LandingPage() {
               <span className="sr-only">Toggle theme</span>
             </Button>
 
+            <Link href={"https://forms.gle/pJS9Z3i5TUwgSdVx8"}>
             <Button className="rounded-full">
               Pre-order Now
               <ChevronRight className="ml-1 size-4" />
             </Button>
+            </Link>
           </div>
           <div className="flex items-center gap-4 md:hidden">
             <Button
@@ -223,10 +225,12 @@ export default function LandingPage() {
                 FAQ
               </Link>
               <div className="flex flex-col gap-2 pt-2 border-t">
+              <Link href={"https://forms.gle/pJS9Z3i5TUwgSdVx8"}>
                 <Button className="rounded-full">
                   Pre-order Now
                   <ChevronRight className="ml-1 size-4" />
                 </Button>
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -259,10 +263,12 @@ export default function LandingPage() {
                 Automate, monitor, and manage — all in one place.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href={"https://forms.gle/pJS9Z3i5TUwgSdVx8"}>
                 <Button size="lg" className="rounded-full h-12 px-8 text-base">
                   Pre-order Now
                   <ArrowRight className="ml-2 size-4" />
                 </Button>
+                </Link>
                 <Link
                   href="/documentation"
                   className="rounded-full h-12 px-8 text-base"
@@ -937,29 +943,26 @@ export default function LandingPage() {
                 reports smarter with Campus Ledger.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mt-4">
-                <Button
-                  size="lg"
-                  variant="secondary"
-                  className="rounded-full h-12 px-8 text-base"
-                >
-                  Pre Order Now
-                  <ArrowRight className="ml-2 size-4" />
-                </Button>
-
-                <Link
-            href="/documentation"
-            className=""
-          >
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="rounded-full h-12 px-8 text-base bg-transparent border-white text-white hover:bg-white/10"
-                >
-
-                  Read Documentation
-                </Button>
+                <Link href={"https://forms.gle/pJS9Z3i5TUwgSdVx8"}>
+                  <Button
+                    size="lg"
+                    variant="secondary"
+                    className="rounded-full h-12 px-8 text-base"
+                  >
+                    Pre Order Now
+                    <ArrowRight className="ml-2 size-4" />
+                  </Button>
                 </Link>
-                
+
+                <Link href="/documentation" className="">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="rounded-full h-12 px-8 text-base bg-transparent border-white text-white hover:bg-white/10"
+                  >
+                    Read Documentation
+                  </Button>
+                </Link>
               </div>
               <p className="text-sm text-primary-foreground/80 mt-4">
                 Make the switch to Campus Ledger today and experience the
@@ -974,12 +977,12 @@ export default function LandingPage() {
           <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
             <div className="space-y-4">
               <div className="flex items-center gap-2 font-bold">
-              <Image  
-              src="/logo-website.png"
-              alt="Campus Ledger Logo"
-              width={150}
-              height={150}
-             />
+                <Image
+                  src="/logo-website.png"
+                  alt="Campus Ledger Logo"
+                  width={150}
+                  height={150}
+                />
               </div>
               <p className="text-sm text-muted-foreground">
                 Making Campus Finance Simple, Transparent, and Secure.
@@ -1091,7 +1094,7 @@ export default function LandingPage() {
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link
-                    href='/documentation'
+                    href="/documentation"
                     className="text-muted-foreground hover:text-foreground transition-colors"
                   >
                     Documentation
