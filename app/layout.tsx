@@ -20,11 +20,11 @@ export const metadata = {
   openGraph: {
     title: "CampusLedger – Simplify Campus Management",
     description: "Manage your campus effortlessly with CampusLedger.",
-    url: "https://campusledger.in",
+    url: "https://campusledger.live",
     siteName: "CampusLedger",
     images: [
       {
-        url: "https://campusledger.in/og-image.jpg",
+        url: "https://campusledger.live/og-image.jpg",
         width: 1200,
         height: 630,
       },
@@ -36,7 +36,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "CampusLedger – Simplify Campus Management",
     description: "Manage your campus effortlessly with CampusLedger.",
-    images: ["https://campusledger.in/twitter-image.jpg"],
+    images: ["https://campusledger.live/twitter-image.jpg"],
   },
   additionalInfo: {
     author: "CampusLedger Team",
@@ -64,8 +64,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "CampusLedger",
-              url: "https://campusledger.in",
-              logo: "https://campusledger.in/logo.png",
+              url: "https://campusledger.live",
+              logo: "https://campusledger.live/logo.png",
               contactPoint: {
                 "@type": "ContactPoint",
                 telephone: "+91-6238964074",

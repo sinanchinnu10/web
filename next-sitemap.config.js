@@ -1,5 +1,5 @@
 module.exports = {
-    siteUrl: 'https://campusledger.in',
+    siteUrl: 'https://campusledger.live',
     generateRobotsTxt: true,
   };
   

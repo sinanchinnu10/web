@@ -1,4 +1,9 @@
+# *
 User-agent: *
 Allow: /
 
-Sitemap: https://campusledger.in/sitemap.xml
+# Host
+Host: https://campusledger.live
+
+# Sitemaps
+Sitemap: https://campusledger.live/sitemap.xml

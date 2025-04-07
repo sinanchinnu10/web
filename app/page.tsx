@@ -118,10 +118,12 @@ export default function LandingPage() {
       >
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2 font-bold">
-            <div className="size-8 rounded-lg bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-primary-foreground">
-              CL
-            </div>
-            <span>Campus Ledger</span>
+            <Image  
+              src="/logo-website.png"
+              alt="Campus Ledger Logo"
+              width={150}
+              height={150}
+             />
           </div>
           <nav className="hidden md:flex gap-8">
             <Link
@@ -261,13 +263,18 @@ export default function LandingPage() {
                   Pre-order Now
                   <ArrowRight className="ml-2 size-4" />
                 </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
+                <Link
+                  href="/documentation"
                   className="rounded-full h-12 px-8 text-base"
                 >
-                  Read Documentation
-                </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="rounded-full h-12 px-8 text-base"
+                  >
+                    Read Documentation
+                  </Button>
+                </Link>
               </div>
               {/* <div className="flex items-center justify-center gap-4 mt-6 text-sm text-muted-foreground">
                 <div className="flex items-center gap-1">
@@ -293,7 +300,7 @@ export default function LandingPage() {
             >
               <div className="rounded-xl overflow-hidden shadow-2xl border border-border/40 bg-gradient-to-b from-background to-muted/20">
                 <Image
-                  src="https://cdn.dribbble.com/userupload/12302729/file/original-fa372845e394ee85bebe0389b9d86871.png?resize=1504x1128&vertical=center"
+                  src="/dashboard.jpg"
                   width={1280}
                   height={720}
                   alt="SaaSify dashboard"
@@ -584,10 +591,10 @@ export default function LandingPage() {
                 <div className="flex justify-center mb-8">
                   <TabsList className="rounded-full p-1">
                     <TabsTrigger value="monthly" className="rounded-full px-6">
-                      Annually (1 Year)
+                      Annually
                     </TabsTrigger>
                     <TabsTrigger value="annually" className="rounded-full px-6">
-                      Biennially (2 Years - Save 10%)
+                      Biennially (Save 10%)
                     </TabsTrigger>
                   </TabsList>
                 </div>
@@ -833,7 +840,8 @@ export default function LandingPage() {
                       "Yes, you can upgrade your plan at any time. Our team will assist you in migrating your data and enabling new features based on your upgraded plan.",
                   },
                   {
-                    question: "Is there a limit to how many students I can add?",
+                    question:
+                      "Is there a limit to how many students I can add?",
                     answer:
                       "Yes, each plan comes with specific student limits. The Basic Plan allows up to 500 students, and the Professional Plan allows up to 2000 students.",
                   },
@@ -922,12 +930,11 @@ export default function LandingPage() {
               className="flex flex-col items-center justify-center space-y-6 text-center"
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
-              Ready to Simplify Your Campus Accounts?
+                Ready to Simplify Your Campus Accounts?
               </h2>
               <p className="mx-auto max-w-[700px] text-primary-foreground/80 md:text-xl">
-              Join institutions that are already managing fees, inventory, and reports smarter with Campus Ledger.
-
-
+                Join institutions that are already managing fees, inventory, and
+                reports smarter with Campus Ledger.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mt-4">
                 <Button
@@ -938,16 +945,25 @@ export default function LandingPage() {
                   Pre Order Now
                   <ArrowRight className="ml-2 size-4" />
                 </Button>
+
+                <Link
+            href="/documentation"
+            className=""
+          >
                 <Button
                   size="lg"
                   variant="outline"
                   className="rounded-full h-12 px-8 text-base bg-transparent border-white text-white hover:bg-white/10"
                 >
+
                   Read Documentation
                 </Button>
+                </Link>
+                
               </div>
               <p className="text-sm text-primary-foreground/80 mt-4">
-                Make the switch to Campus Ledger today and experience the difference.
+                Make the switch to Campus Ledger today and experience the
+                difference.
               </p>
             </motion.div>
           </div>
@@ -958,15 +974,15 @@ export default function LandingPage() {
           <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
             <div className="space-y-4">
               <div className="flex items-center gap-2 font-bold">
-                <div className="size-8 rounded-lg bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-primary-foreground">
-                  CL
-                </div>
-                <span>Campus Ledger</span>
+              <Image  
+              src="/logo-website.png"
+              alt="Campus Ledger Logo"
+              width={150}
+              height={150}
+             />
               </div>
               <p className="text-sm text-muted-foreground">
-              Making Campus Finance Simple, Transparent, and Secure.
-
-
+                Making Campus Finance Simple, Transparent, and Secure.
               </p>
               <div className="flex gap-4">
                 <Link
@@ -1075,7 +1091,7 @@ export default function LandingPage() {
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link
-                    href="#"
+                    href='/documentation'
                     className="text-muted-foreground hover:text-foreground transition-colors"
                   >
                     Documentation
@@ -1112,7 +1128,7 @@ export default function LandingPage() {
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link
-                    href="#"
+                    href="/about-us"
                     className="text-muted-foreground hover:text-foreground transition-colors"
                   >
                     About
@@ -1128,7 +1144,7 @@ export default function LandingPage() {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    href="/privacy-policy"
                     className="text-muted-foreground hover:text-foreground transition-colors"
                   >
                     Privacy Policy
@@ -1136,7 +1152,7 @@ export default function LandingPage() {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    href="terms-of-service"
                     className="text-muted-foreground hover:text-foreground transition-colors"
                   >
                     Terms of Service
@@ -1147,7 +1163,8 @@ export default function LandingPage() {
           </div>
           <div className="flex flex-col gap-4 sm:flex-row justify-between items-center border-t border-border/40 pt-8">
             <p className="text-xs text-muted-foreground">
-              &copy; {new Date().getFullYear()} CampusLedger. All rights reserved.
+              &copy; {new Date().getFullYear()} CampusLedger. All rights
+              reserved.
             </p>
             <div className="flex gap-4">
               <Link
