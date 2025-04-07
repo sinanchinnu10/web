@@ -160,9 +160,9 @@ export default function LandingPage() {
               <span className="sr-only">Toggle theme</span>
             </Button>
 
-            <Link href={"https://forms.gle/pJS9Z3i5TUwgSdVx8"}>
+            <Link href={"/preorder"}>
             <Button className="rounded-full">
-              Pre-order Now
+              Pre-Book Now
               <ChevronRight className="ml-1 size-4" />
             </Button>
             </Link>
@@ -225,9 +225,9 @@ export default function LandingPage() {
                 FAQ
               </Link>
               <div className="flex flex-col gap-2 pt-2 border-t">
-              <Link href={"https://forms.gle/pJS9Z3i5TUwgSdVx8"}>
+              <Link href={"/preorder"}>
                 <Button className="rounded-full">
-                  Pre-order Now
+                  Pre-Book Now
                   <ChevronRight className="ml-1 size-4" />
                 </Button>
                 </Link>
@@ -263,9 +263,9 @@ export default function LandingPage() {
                 Automate, monitor, and manage — all in one place.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href={"https://forms.gle/pJS9Z3i5TUwgSdVx8"}>
+              <Link href={"/preorder"}>
                 <Button size="lg" className="rounded-full h-12 px-8 text-base">
-                  Pre-order Now
+                  Pre-Book Now
                   <ArrowRight className="ml-2 size-4" />
                 </Button>
                 </Link>
@@ -619,7 +619,7 @@ export default function LandingPage() {
                           "Role-based admin access",
                           "Email support",
                         ],
-                        cta: "Order Now",
+                        cta: "Book Now",
                       },
                       {
                         name: "Professional Plan",
@@ -634,7 +634,7 @@ export default function LandingPage() {
                           "Linked purchase history per student",
                           "Advanced reports & analytics",
                         ],
-                        cta: "Order Now",
+                        cta: "Book Now",
                         popular: true,
                       },
                       {
@@ -647,7 +647,7 @@ export default function LandingPage() {
                           "Auto backups & updates",
                           "Staff login & access control",
                         ],
-                        cta: "Order Now",
+                        cta: "Book Now",
                       },
                     ].map((plan, i) => (
                       <motion.div
@@ -690,6 +690,7 @@ export default function LandingPage() {
                                 </li>
                               ))}
                             </ul>
+                            <Link href={"/preorder"}>
                             <Button
                               className={`w-full mt-auto rounded-full ${
                                 plan.popular
@@ -700,6 +701,7 @@ export default function LandingPage() {
                             >
                               {plan.cta}
                             </Button>
+                            </Link>
                           </CardContent>
                         </Card>
                       </motion.div>
@@ -721,7 +723,7 @@ export default function LandingPage() {
                           "Role-based admin access",
                           "Email support",
                         ],
-                        cta: "Order Now",
+                        cta: "Book Now",
                       },
                       {
                         name: "Professional Plan",
@@ -736,7 +738,7 @@ export default function LandingPage() {
                           "Linked purchase history per student",
                           "Advanced reports & analytics",
                         ],
-                        cta: "Order Now",
+                        cta: "Book Now",
                         popular: true,
                       },
                       {
@@ -749,7 +751,7 @@ export default function LandingPage() {
                           "Auto backups & updates",
                           "Staff login & access control",
                         ],
-                        cta: "Order Now",
+                        cta: "Book Now",
                       },
                     ].map((plan, i) => (
                       <motion.div
@@ -792,6 +794,7 @@ export default function LandingPage() {
                                 </li>
                               ))}
                             </ul>
+                            <Link href={"/preorder"}>
                             <Button
                               className={`w-full mt-auto rounded-full ${
                                 plan.popular
@@ -802,6 +805,7 @@ export default function LandingPage() {
                             >
                               {plan.cta}
                             </Button>
+                            </Link>
                           </CardContent>
                         </Card>
                       </motion.div>
@@ -943,13 +947,13 @@ export default function LandingPage() {
                 reports smarter with Campus Ledger.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mt-4">
-                <Link href={"https://forms.gle/pJS9Z3i5TUwgSdVx8"}>
+                <Link href={"/preorder"}>
                   <Button
                     size="lg"
                     variant="secondary"
                     className="rounded-full h-12 px-8 text-base"
                   >
-                    Pre Order Now
+                    Pre Book Now
                     <ArrowRight className="ml-2 size-4" />
                   </Button>
                 </Link>
@@ -1171,13 +1175,13 @@ export default function LandingPage() {
             </p>
             <div className="flex gap-4">
               <Link
-                href="#"
+                href="/privacy-policy"
                 className="text-xs text-muted-foreground hover:text-foreground transition-colors"
               >
                 Privacy Policy
               </Link>
               <Link
-                href="#"
+                href="/terms-of-service"
                 className="text-xs text-muted-foreground hover:text-foreground transition-colors"
               >
                 Terms of Service
