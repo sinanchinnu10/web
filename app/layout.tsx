@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
+export const metadata : Metadata = {
   title: "CampusLedger – Simplify Campus Management",
   description:
     "CampusLedger is an all-in-one software for educational institutions. Manage students, finances, staff, and more.",
@@ -24,7 +24,7 @@ export const metadata = {
     siteName: "CampusLedger",
     images: [
       {
-        url: "https://campusledger.live/og-image.jpg",
+        url: "https://campusledger.live/logo-website.png",
         width: 1200,
         height: 630,
       },
@@ -36,17 +36,13 @@ export const metadata = {
     card: "summary_large_image",
     title: "CampusLedger – Simplify Campus Management",
     description: "Manage your campus effortlessly with CampusLedger.",
-    images: ["https://campusledger.live/twitter-image.jpg"],
+    images: ["https://campusledger.live/logo-website.png"],
   },
-  additionalInfo: {
-    author: "CampusLedger Team",
-    version: "1.0.0",
+  robots: {
+    index: true,
+    follow: true,
   },
-  lastUpdated: new Date().toISOString(),
-  contact: {
-    email: "campusledger@outlook.in",
-    phone: "+91-6238964074",
-  },
+  
 };
 
 export default function RootLayout({
@@ -57,6 +53,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+      <link rel="icon" href="/favicon.ico" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
