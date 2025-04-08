@@ -409,7 +409,7 @@ export default function LandingPage() {
               </h2>
               <p className="max-w-[800px] text-muted-foreground md:text-lg">
                 Get started in minutes and see the difference our platform can
-                make for your business.
+                make for your Institution.
               </p>
             </motion.div>
 
