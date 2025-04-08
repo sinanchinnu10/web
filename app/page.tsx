@@ -493,7 +493,7 @@ export default function LandingPage() {
                       Annually
                     </TabsTrigger>
                     <TabsTrigger value="annually" className="rounded-full px-6">
-                      Biennially (Save 10%)
+                      Biennially (Save 30%)
                     </TabsTrigger>
                   </TabsList>
                 </div>
@@ -623,7 +623,7 @@ export default function LandingPage() {
                     {[
                       {
                         name: "Basic Plan",
-                        price: "₹7,250",
+                        price: "₹5,599",
                         description:
                           "Perfect for small institutions starting digital.",
                         features: [
@@ -637,7 +637,7 @@ export default function LandingPage() {
                       },
                       {
                         name: "Professional Plan",
-                        price: "₹8,549",
+                        price: "₹6,649",
                         description:
                           "For growing campuses needing full control.",
                         features: [
