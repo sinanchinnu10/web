@@ -67,7 +67,7 @@ export default function RootLayout({
                 "@type": "ContactPoint",
                 telephone: "+91-6238964074",
                 contactType: "Customer Support",
-                email: "info@campusledger@live",
+                email: "info@campusledger.live",
               },
             }),
           }}

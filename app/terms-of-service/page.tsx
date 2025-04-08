@@ -34,7 +34,7 @@ export default function TermsOfServicePage() {
             <strong>4. Termination:</strong> We reserve the right to suspend or terminate your access if you violate any part of this agreement.
           </p>
           <p>
-            <strong>5. Contact:</strong> If you have questions about these terms, contact us at <a href="mailto:info@campusledger@live" className="underline">info@campusledger@live</a>.
+            <strong>5. Contact:</strong> If you have questions about these terms, contact us at <a href="mailto:info@campusledger.live" className="underline">info@campusledger.live</a>.
           </p>
         </div>
 

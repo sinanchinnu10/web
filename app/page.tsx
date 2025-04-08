@@ -130,6 +130,7 @@ export default function LandingPage() {
               src="/logo-website.png"
               alt="Campus Ledger Logo"
               width={150}
+              height={50}
             />
           </div>
           <nav className="hidden md:flex gap-8">
@@ -581,6 +582,23 @@ export default function LandingPage() {
                                   <span>{feature}</span>
                                 </li>
                               ))}
+
+                            {/* learn more li */}
+                              {
+                                plan.name !== "Included in All Plans" && (
+                                  <li className="flex items-center">
+                                <Link
+                                  href={`plans/${
+                                    plan.name === 'Basic Plan' ? 'basic' : 'professional'
+                                  }`}      
+                                  className="text-primary underline"
+                                >
+                                  Learn more
+                                </Link>
+                              </li>
+                                )
+                              }
+
                             </ul>
                             <Link href={"/prebook"}>
                               <Button
@@ -605,7 +623,7 @@ export default function LandingPage() {
                     {[
                       {
                         name: "Basic Plan",
-                        price: "₹7,999",
+                        price: "₹7,250",
                         description:
                           "Perfect for small institutions starting digital.",
                         features: [
@@ -619,7 +637,7 @@ export default function LandingPage() {
                       },
                       {
                         name: "Professional Plan",
-                        price: "₹9,499",
+                        price: "₹8,549",
                         description:
                           "For growing campuses needing full control.",
                         features: [
@@ -767,7 +785,7 @@ export default function LandingPage() {
                   {
                     question: "What kind of support do you offer?",
                     answer:
-                      "We offer support through email and WhatsApp. All plans include email support, while the Professional Plan offers priority response. Contact us at info@campusledger@live or WhatsApp us at +91 6238964074.",
+                      "We offer support through email and WhatsApp. All plans include email support, while the Professional Plan offers priority response. Contact us at info@campusledger.live or WhatsApp us at +91 6238964074 or Call us at +91 9745384033.",
                   },
                   {
                     question: "What payment methods do you accept?",
@@ -947,7 +965,7 @@ export default function LandingPage() {
                   <Mail className="size-6" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Email</h3>
-                <p className="text-muted-foreground">info@campusledger@live</p>
+                <p className="text-muted-foreground">info@campusledger.live</p>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -960,7 +978,7 @@ export default function LandingPage() {
                   <Phone className="size-6" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Phone</h3>
-                <p className="text-muted-foreground">+91 6238964074</p>
+                <p className="text-muted-foreground">+91 9745384033</p>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -1041,7 +1059,7 @@ export default function LandingPage() {
                   src="/logo-website.png"
                   alt="Campus Ledger Logo"
                   width={150}
-                  height={150}
+                  height={50}
                 />
               </div>
               <p className="text-sm text-muted-foreground">
